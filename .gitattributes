@@ -1,0 +1,10 @@
+# Force GitHub Linguist to ignore design assets and raw HTML
+stitch_assets/** linguist-vendored
+*.html linguist-detectable=false
+
+# Explicitly classify the frontend as TypeScript/JavaScript
+frontend/src/**/*.tsx linguist-detectable=true
+frontend/src/**/*.ts linguist-detectable=true
+
+# Explicitly classify the backend as Python
+api/**/*.py linguist-detectable=true
