@@ -1,74 +1,78 @@
-# Hospital Management System (HMS) — Clinical Operations
+# Hospital Management System (HMS) — Clinical Operations Architecture
 
-A modern, full-stack Hospital Management System designed for efficient clinical operations, role-based workflows, and financial tracking.
 
-## 🚀 Overview
 
-This HMS project provides a robust platform for managing medical practices. It features separate portals for Administrators, Doctors, and Patients, ensuring that each stakeholder has the exact tools they need for optimal care delivery.
+## 🚀 Architectural Overview
+A modern, full-stack Hospital Management System engineered for efficient clinical operations, role-based access control (RBAC), and offline financial ledger tracking. 
 
-### Key Features
+This system was architected with a strict adherence to **Object-Oriented Programming (OOP)** principles, replacing legacy manual filing systems with a modular, secure, and highly scalable digital environment. It provides isolated portals for Administrators, Doctors, and Patients, ensuring that each stakeholder possesses the exact operational tools required for optimal care delivery.
 
-- **Multi-Role Dashboards**: Tailored experiences for Admins, Doctors, and Patients.
-- **Appointment Lifecycle**: Complete management from pending requests to approved consultations and completed visits.
-- **Financial Ledger**: Immutable billing system with historical revenue visualization using Recharts.
-- **Doctor Shift Management**: Real-time status tracking (On Shift, Busy, Off Duty) for better resource allocation.
-- **Patient Portals**: Secure access for patients to book appointments and view medical history.
-- **Modern UI**: Sleek, responsive design built with Next.js and high-end aesthetics.
+## 🧬 Core OOP Implementation (FastAPI Backend)
+The backend architecture rigorously applies academic computer science concepts to solve real-world clinical routing problems:
+* **Inheritance & Polymorphism:** Utilizes a unified `Person` base class, extended by `Admin`, `Doctor`, and `Patient` derived classes using SQLAlchemy polymorphic identities.
+* **Encapsulation:** Protects sensitive clinical data (e.g., consultation notes, billing records) using Pydantic schemas, ensuring strict data validation at the network border.
+* **State Machines:** Implements idempotent REST APIs to manage the lifecycle of an `Appointment` (Pending -> Approved -> Completed) and Doctor availability (On Shift -> Busy -> Off Duty).
 
-## 🛠️ Tech Stack
+## 🏥 Key System Features
+* **Intelligent Appointment Routing:** Patients can dynamically query available specialists based on real-time shift availability.
+* **Multi-Tier RBAC Dashboards:** Cryptographically isolated navigation and data-fetching for Admins, Doctors, and Patients.
+* **Immutable Financial Ledger:** Tracks offline consultation fees (categorized by specialization) with an absolute datetime boundary, rendering historical Month-over-Month (MoM) revenue visualization.
+* **Doctor Shift Management:** Real-time status toggling directly linked to the patient-facing booking engine.
 
-### Backend
-- **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python)
-- **Database**: MySQL with [SQLAlchemy](https://www.sqlalchemy.org/) ORM
-- **Validation**: [Pydantic](https://docs.pydantic.dev/)
-- **Environment**: Dotenv for secure configuration
+## 🛠️ Technology Stack
 
-### Frontend
-- **Framework**: [Next.js](https://nextjs.org/) (React)
-- **Styling**: Vanilla CSS / CSS Modules
-- **Icons**: Lucide React
-- **Charts**: Recharts for financial analytics
-- **API Client**: Axios
+**Backend System**
+* **Framework:** FastAPI (Python)
+* **Database:** MySQL relational database
+* **ORM:** SQLAlchemy (Object-Relational Mapping)
+* **Validation:** Pydantic
 
-## ⚙️ Setup & Installation
+**Frontend Client**
+* **Framework:** Next.js 14+ (React App Router)
+* **Styling:** Tailwind CSS (Dark/Clinical Theme)
+* **Data Visualization:** Recharts
+* **Network Client:** Axios
 
-### Backend Setup
+## ⚙️ Deployment & Initialization
+
+### Backend Setup (Python)
 1. Navigate to the `api` directory:
    ```bash
    cd api
    ```
-2. Create a virtual environment and activate it:
+2. Create and activate a virtual environment:
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # Windows: venv\Scripts\activate
    ```
-3. Install dependencies:
+3. Install strict dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
-4. Create a `.env` file based on `.env.example` and configure your `DATABASE_URL`.
-5. Run the server:
+4. Configure environment variables (refer to .env.example) and initialize the server. The initialization script will automatically seed the MySQL database with mock clinical data:
+
+  
    ```bash
    uvicorn main:app --reload
    ```
+## Frontend Setup (Next.js)
 
-### Frontend Setup
-1. Navigate to the `frontend` directory:
+5. Navigate to the frontend directory:
+
    ```bash
    cd frontend
    ```
-2. Install dependencies:
+6. Install Node dependencies:
+
    ```bash
    npm install
    ```
-3. Create a `.env.local` file based on `.env.example` and set `NEXT_PUBLIC_API_URL`.
-4. Run the development server:
+7. Boot the Next.js development server:
+
    ```bash
    npm run dev
    ```
 
-## 🔐 Security Note
-All sensitive configurations are managed via environment variables. Ensure that `.env` files are never committed to version control. Template files are provided as `.env.example`.
-
----
-*Built with care for medical professionals and patients.*
+🔐 Security & Constraints
+All sensitive configurations, including MySQL connection strings, are strictly managed via environment variables. The financial module operates as a closed, offline ledger and does not currently integrate with external payment gateways.
