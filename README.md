@@ -76,3 +76,16 @@ The backend architecture rigorously applies academic computer science concepts t
 
 🔐 Security & Constraints
 All sensitive configurations, including MySQL connection strings, are strictly managed via environment variables. The financial module operates as a closed, offline ledger and does not currently integrate with external payment gateways.
+
+## Frontend Preview 
+
+![HMS Clinical Operations Login](./Preview/login.png)
+
+
+![HMS Clinical Operations Admin Dashboard](./Preview/admin-dashboard.png)
+
+
+![HMS Clinical Operations Doctor Dashboard](./Preview/doctor-queue.png)
+
+
+![HMS Clinical Operations Patient Dashboard](./Preview/patient-booking.png)
