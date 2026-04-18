@@ -79,13 +79,13 @@ All sensitive configurations, including MySQL connection strings, are strictly m
 
 ## Frontend Preview 
 
-![HMS Clinical Operations Login](./Preview/login.png)
+![HMS Clinical Operations Login](./preview/login.png)
 
 
-![HMS Clinical Operations Admin Dashboard](./Preview/admin-dashboard.png)
+![HMS Clinical Operations Admin Dashboard](./preview/admin-dashboard.png)
 
 
-![HMS Clinical Operations Doctor Dashboard](./Preview/doctor-queue.png)
+![HMS Clinical Operations Doctor Dashboard](./preview/doctor-queue.png)
 
 
-![HMS Clinical Operations Patient Dashboard](./Preview/patient-booking.png)
+![HMS Clinical Operations Patient Dashboard](./preview/patient-booking.png)
