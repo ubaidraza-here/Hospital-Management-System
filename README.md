@@ -1,4 +1,4 @@
-# Hospitality Management System (HMS) — Clinical Operations
+# Hospital Management System (HMS) — Clinical Operations
 
 A modern, full-stack Hospital Management System designed for efficient clinical operations, role-based workflows, and financial tracking.
 
