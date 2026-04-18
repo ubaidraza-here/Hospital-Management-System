@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FCMS | Sessions Administration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#003543",
+                        "tertiary-container": "#ffb229",
+                        "secondary": "#d7ffc5",
+                        "inverse-surface": "#dce2f7",
+                        "secondary-fixed-dim": "#2ae500",
+                        "inverse-on-surface": "#293040",
+                        "error-container": "#93000a",
+                        "surface-bright": "#323949",
+                        "surface-variant": "#2e3545",
+                        "on-primary-fixed": "#001f28",
+                        "surface-container-high": "#232a3a",
+                        "on-tertiary-fixed": "#291800",
+                        "primary-fixed-dim": "#47d6ff",
+                        "primary-container": "#00d2ff",
+                        "on-surface": "#dce2f7",
+                        "surface-container-highest": "#2e3545",
+                        "on-secondary-container": "#0f6d00",
+                        "on-background": "#dce2f7",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-secondary": "#053900",
+                        "surface-container-lowest": "#070e1d",
+                        "secondary-container": "#2ff801",
+                        "on-tertiary": "#442b00",
+                        "tertiary": "#ffd79f",
+                        "surface": "#0c1322",
+                        "primary": "#a5e7ff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#00677f",
+                        "on-surface-variant": "#bbc9cf",
+                        "surface-container": "#191f2f",
+                        "on-primary-container": "#00566a",
+                        "secondary-fixed": "#79ff5b",
+                        "background": "#0c1322",
+                        "on-error": "#690005",
+                        "surface-container-low": "#141b2b",
+                        "surface-dim": "#0c1322",
+                        "outline-variant": "#3c494e",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#b6ebff",
+                        "outline": "#859399",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "on-secondary-fixed-variant": "#095300",
+                        "surface-tint": "#47d6ff",
+                        "tertiary-fixed-dim": "#ffba4a",
+                        "on-secondary-fixed": "#022100",
+                        "on-primary-fixed-variant": "#004e60",
+                        "on-tertiary-container": "#6c4700"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#070e1d] dark:bg-[#070e1d] flex flex-col py-8 px-4 gap-2 z-50">
+<div class="mb-10 px-4">
+<h1 class="font-['Manrope'] font-black text-2xl text-[#a5e7ff]">KINETIC</h1>
+<p class="text-slate-400 text-xs font-medium tracking-widest uppercase mt-1">Elite Performance</p>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-medium text-sm">Trainers</span>
+</a>
+<a class="flex items-center gap-3 text-[#d7ffc5] bg-[#141b2b] rounded-lg px-4 py-3 border-l-4 border-[#2ff801]" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-medium text-sm">Sessions</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="card_membership">card_membership</span>
+<span class="font-medium text-sm">Subscriptions</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-medium text-sm text-slate-400">Help</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium text-sm text-slate-400">Logout</span>
+</a>
+</div>
+</aside>
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Component -->
+<header class="flex justify-between items-center w-full px-8 py-4 sticky top-0 z-40 bg-[#0c1322]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-[#a5e7ff] uppercase tracking-widest">FCMS</span>
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-lg py-2 pl-10 pr-4 text-sm text-on-surface focus:ring-1 focus:ring-primary-container w-64 transition-all" placeholder="Search sessions..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-secondary ring-2 ring-[#0c1322]"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/20">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface leading-none">Admin Portal</p>
+<p class="text-[10px] text-slate-500 font-medium">Headquarters</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<section class="p-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Sessions</h2>
+<p class="text-on-surface-variant font-medium">Manage and monitor all active performance schedules.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-surface-container-highest/50 backdrop-blur-md px-4 py-2.5 rounded-lg text-sm font-semibold border border-outline-variant/10 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="file_download">file_download</span>
+                        Export CSV
+                    </button>
+<button class="flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:shadow-[0_0_20px_rgba(0,210,255,0.3)] transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                        New Session
+                    </button>
+</div>
+</div>
+<!-- Dashboard Logic: Filters & Quick Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="h-12 w-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Today's Total</p>
+<p class="text-2xl font-black text-on-surface">42</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="h-12 w-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Completed</p>
+<p class="text-2xl font-black text-on-surface">18</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="h-12 w-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="pending">pending</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Upcoming</p>
+<p class="text-2xl font-black text-on-surface">24</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors">
+<div class="h-12 w-12 rounded-lg bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="cancel">cancel</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">No-Shows</p>
+<p class="text-2xl font-black text-on-surface">3</p>
+</div>
+</div>
+</div>
+<!-- Filters Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-4 mb-6 flex flex-wrap items-center gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="filter_list">filter_list</span>
+<span class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Filters:</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 hidden md:block"></div>
+<div class="flex gap-2">
+<select class="bg-surface-container text-xs font-medium text-on-surface rounded-lg border-none focus:ring-1 focus:ring-primary-container px-4 py-2">
+<option>Date: Today</option>
+<option>Date: Tomorrow</option>
+<option>Next 7 Days</option>
+<option>Custom Range</option>
+</select>
+<select class="bg-surface-container text-xs font-medium text-on-surface rounded-lg border-none focus:ring-1 focus:ring-primary-container px-4 py-2">
+<option>All Session Types</option>
+<option>Personal Training</option>
+<option>HIIT Class</option>
+<option>Strength &amp; Conditioning</option>
+<option>Recovery Lab</option>
+</select>
+<select class="bg-surface-container text-xs font-medium text-on-surface rounded-lg border-none focus:ring-1 focus:ring-primary-container px-4 py-2">
+<option>All Areas</option>
+<option>Main Floor</option>
+<option>Zone B</option>
+<option>Elite Studio</option>
+</select>
+</div>
+<button class="ml-auto text-xs font-bold text-primary hover:underline transition-all">Clear All Filters</button>
+</div>
+<!-- Sessions Table -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-highest/50">
+<tr>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Time &amp; Status</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Session Type</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Trainer</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Member</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.1em]">Location</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.1em] text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="text-sm font-black text-on-surface">06:00 AM</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-container/20 text-secondary border border-secondary/20">LIVE</span>
+</div>
+<div class="text-[10px] text-on-surface-variant mt-1">Ends in 22 mins</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-primary">Strength &amp; Hypertrophy</div>
+<div class="text-[10px] text-on-surface-variant">Level: Advanced</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img class="h-8 w-8 rounded-full object-cover" data-alt="portrait of a muscular professional fitness trainer with intense focus and short beard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVKDX_ICHpNdC7Q1XNisnWZNO1fNi_2kJoWpXXmo7I6AQS18aru4Ipsy9vJOYl-2XZAy59tmOSnc2NjO-GXDZuHIy-_7NLBxISgjZpJDtt8b4eXKVwpPvgEFDMSqJljCMIVjHHlyCERxqETcPlY_sSRJ-UxWw9mFzNoc8g7khLbfrVewWfQE03vMkqGgG0_H5HaNZc53ApashOErpki5Nyb9TXiDNvy5xw_2tGsWTsiX2VIQC8pn_JYshF5MB-IFkzcIBXjtjE2WQs"/>
+<div class="text-sm font-medium text-on-surface">Alex Rivera</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-medium text-on-surface">Jordan Smith</div>
+<div class="text-[10px] text-on-surface-variant">Pro Membership</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                    Zone A - Power Rack 04
+                                </div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-white"><span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface/30 hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5">
+<div class="text-sm font-black text-on-surface">07:30 AM</div>
+<div class="text-[10px] text-on-surface-variant mt-1">Starting soon</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-primary">Metabolic Conditioning</div>
+<div class="text-[10px] text-on-surface-variant">Type: High Intensity</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img class="h-8 w-8 rounded-full object-cover" data-alt="athletic female coach in black activewear with dynamic energetic expression against gym background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqOdR42WgVHc8WLNejocS2CXNGZnRRwSrDcZaHV-zpHTbmV9s33LDdN0t-cNqmVufeaWikj8Rlk962HzjFirWuEogIk3_ABqVSgbIXQtO88DBBgVI9olcN6y8WcUxSJR85XQegW4G071qlIwCqrQLR2xavN-Uo1SNX0qFhURNOXEOPJ2xndNCybKAz-TaTY5YMA5-qnt2A4Yj0p93xmq3Qu4CdxZ3a2goIcoJEwzihuVtFnmmwkRzNwvzHM30xESTt5wUjF1hg1cMw"/>
+<div class="text-sm font-medium text-on-surface">Sarah Chen</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-medium text-on-surface">Marcus Webb</div>
+<div class="text-[10px] text-on-surface-variant">Trial Session</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                    Main Floor - HIIT Zone
+                                </div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-white"><span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5">
+<div class="text-sm font-black text-slate-500">08:00 AM</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-surface-container-highest text-on-surface-variant border border-outline-variant/20">UPCOMING</span>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-primary">Recovery Lab (Cryo)</div>
+<div class="text-[10px] text-on-surface-variant">Service: Performance recovery</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-surface-container-high flex items-center justify-center text-xs text-on-surface font-bold">DR</div>
+<div class="text-sm font-medium text-on-surface">David Ross</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-medium text-on-surface">Elena Rodriguez</div>
+<div class="text-[10px] text-on-surface-variant">Elite Tier</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                    Recovery Wing - Pod 01
+                                </div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-white"><span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface/30 hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5">
+<div class="text-sm font-black text-slate-500">09:15 AM</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-tertiary-container/10 text-tertiary border border-tertiary/20">BOOKED</span>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-bold text-primary">1-on-1 Boxing Drills</div>
+<div class="text-[10px] text-on-surface-variant">Intensity: Extreme</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<img class="h-8 w-8 rounded-full object-cover" data-alt="professional boxer coach with fierce expression and wrapped hands in a moody gymnasium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwzplGkNmku60RFgmJrIhNrbts_wejyETf3WGf9_OUNsjw2dRhDZeMy5jqUFgkFwpje9J0uVP_B-ICSpDITUPeAmppM3wTc5uUHBq4UncDssENkc53jB1KHqz_zM3D-EXl-q4dhgt4Jzf-xaWZ6GPr-a66AsLVezxol6uXH9Ovb-oNRnYSRDXidk7MuRx19BnVO6dnL3LAisDMCUYe_2PVBH62Xe9bnAVqfHAO8aP0M-S-fCBZZ5zC4ypvNXrfwvoEIo8JzWJ06JYH"/>
+<div class="text-sm font-medium text-on-surface">Mike Vane</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="text-sm font-medium text-on-surface">Liam Carter</div>
+<div class="text-[10px] text-on-surface-variant">Corporate Plan</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                    Combat Studio - Area C
+                                </div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-on-surface-variant hover:text-white"><span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-surface-container-high/30 flex items-center justify-between">
+<p class="text-xs text-on-surface-variant">Showing <span class="font-bold text-on-surface">1-4</span> of <span class="font-bold text-on-surface">42</span> sessions</p>
+<div class="flex gap-2">
+<button class="p-1 rounded bg-surface-container-low text-on-surface-variant hover:text-white disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="px-3 py-1 rounded bg-primary text-on-primary text-xs font-bold">1</button>
+<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface-variant text-xs font-bold hover:bg-surface-container transition-colors">2</button>
+<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface-variant text-xs font-bold hover:bg-surface-container transition-colors">3</button>
+<button class="p-1 rounded bg-surface-container-low text-on-surface-variant hover:text-white">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Side Statistics -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+<div class="lg:col-span-2 bg-gradient-to-br from-surface-container-low to-surface-container rounded-2xl p-6 border border-outline-variant/10">
+<h3 class="text-lg font-bold text-on-surface mb-6">Staffing Utilization</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Morning Shift Peak (06:00 - 10:00)</span>
+<span class="text-xs font-black text-secondary">92%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 92%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Afternoon Shift (10:00 - 15:00)</span>
+<span class="text-xs font-black text-primary">64%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 64%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Evening Rush (16:00 - 21:00)</span>
+<span class="text-xs font-black text-tertiary">88%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 88%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-[#141b2b] rounded-2xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
+<!-- Glassmorphism decorative element -->
+<div class="absolute top-[-20%] right-[-10%] w-40 h-40 bg-primary/20 blur-[60px] rounded-full"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-32 h-32 bg-secondary/10 blur-[50px] rounded-full"></div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4" data-icon="analytics" data-weight="fill" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<h3 class="text-xl font-black text-on-surface mb-2">Weekly Summary</h3>
+<p class="text-sm text-on-surface-variant px-4 mb-6">Total sessions grew by 14% this week compared to previous month.</p>
+<button class="bg-surface-container-highest text-primary text-xs font-bold py-3 px-6 rounded-full border border-primary/20 hover:bg-primary hover:text-on-primary transition-all">
+                        View Detailed Report
+                    </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-auto px-8 py-10 border-t border-outline-variant/10 text-center">
+<p class="text-xs font-medium text-slate-600 tracking-widest uppercase">
+                © 2024 Kinetic Elite Performance Management Systems
+            </p>
+</footer>
+</main>
+</body></html>

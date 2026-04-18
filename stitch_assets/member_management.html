@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#053900",
+                        "surface-container-lowest": "#070e1d",
+                        "tertiary": "#ffd79f",
+                        "inverse-surface": "#dce2f7",
+                        "on-surface": "#dce2f7",
+                        "outline": "#859399",
+                        "secondary-container": "#2ff801",
+                        "surface-container-high": "#232a3a",
+                        "tertiary-fixed": "#ffddb1",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffba4a",
+                        "surface": "#0c1322",
+                        "surface-container-low": "#141b2b",
+                        "primary-fixed-dim": "#47d6ff",
+                        "secondary": "#d7ffc5",
+                        "inverse-on-surface": "#293040",
+                        "on-primary-container": "#00566a",
+                        "primary-fixed": "#b6ebff",
+                        "surface-dim": "#0c1322",
+                        "surface-tint": "#47d6ff",
+                        "primary": "#a5e7ff",
+                        "surface-container-highest": "#2e3545",
+                        "on-tertiary-container": "#6c4700",
+                        "background": "#0c1322",
+                        "on-secondary-container": "#0f6d00",
+                        "on-primary-fixed": "#001f28",
+                        "on-tertiary-fixed": "#291800",
+                        "secondary-fixed": "#79ff5b",
+                        "on-secondary-fixed-variant": "#095300",
+                        "surface-container": "#191f2f",
+                        "tertiary-container": "#ffb229",
+                        "on-background": "#dce2f7",
+                        "inverse-primary": "#00677f",
+                        "surface-bright": "#323949",
+                        "outline-variant": "#3c494e",
+                        "on-secondary-fixed": "#022100",
+                        "on-primary": "#003543",
+                        "on-primary-fixed-variant": "#004e60",
+                        "primary-container": "#00d2ff",
+                        "secondary-fixed-dim": "#2ae500",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#624000",
+                        "on-surface-variant": "#bbc9cf",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#2e3545",
+                        "on-tertiary": "#442b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #0c1322; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(46, 53, 69, 0.7); backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component JSON Mapping) -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-[#070e1d] border-none flex flex-col py-8 px-4 z-50">
+<div class="mb-10 px-4">
+<h1 class="text-2xl font-black tracking-tighter text-[#a5e7ff] font-headline uppercase">KINETIC</h1>
+<p class="font-['Manrope'] uppercase tracking-widest text-xs text-slate-500 mt-1">High Performance</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-[#141b2b] transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="font-['Manrope'] uppercase tracking-widest text-xs">Dashboard</span>
+</a>
+<!-- Members (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#00d2ff] font-bold border-r-2 border-[#00d2ff] bg-[#141b2b]/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Manrope'] uppercase tracking-widest text-xs">Members</span>
+</a>
+<!-- Trainers -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-[#141b2b] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">fitness_center</span>
+<span class="font-['Manrope'] uppercase tracking-widest text-xs">Trainers</span>
+</a>
+<!-- Sessions -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-[#141b2b] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">event_repeat</span>
+<span class="font-['Manrope'] uppercase tracking-widest text-xs">Sessions</span>
+</a>
+<!-- Subscriptions -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-[#141b2b] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">card_membership</span>
+<span class="font-['Manrope'] uppercase tracking-widest text-xs">Subscriptions</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-[#141b2b] transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="font-['Manrope'] uppercase tracking-widest text-xs">Settings</span>
+</a>
+</nav>
+<div class="px-4 py-4 mt-auto">
+<div class="flex items-center gap-3">
+<img alt="User Avatar" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="Professional headshot of a fitness gym manager with a confident expression and athletic build in a modern dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-8qGz9HEMARqed_XdLJHUmC95WTBzacu_qyJQscGaFtzQSUrKXCON5Prr7yK9rMsO-9Qxs9YH0Xks4zohmUBBPwHwzRd2A4Yy0yw7YjpXr_ZCjUCzcOsVGvZwTkWOBttMdWscG_iUBe7cB9StFJIP6taQi2GlNnra7TZHovg75CtM9cWe69OhhrHC0GhdePam97E3G_BVp7LLuYdsGzkka7IzSFxiyOIDyE0kyLHwcxdNwzoUkvc7zxkVr7QpKXXWe5hVbQWUEEYR"/>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-on-surface truncate">Marcus Vane</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">System Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Stage -->
+<main class="ml-[240px] min-h-screen">
+<!-- TopNavBar (Shared Component JSON Mapping) -->
+<header class="fixed top-0 right-0 w-[calc(100%-240px)] h-16 px-8 flex justify-between items-center bg-[#0c1322]/70 backdrop-blur-xl z-40 shadow-[0_20px_40px_rgba(0,210,255,0.08)]">
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant/15 rounded-lg px-4 py-1.5 w-96 focus-within:ring-1 ring-[#00d2ff]/30 transition-all">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none text-sm text-on-surface focus:ring-0 w-full placeholder:text-slate-500 font-body" placeholder="Search members, IDs, or trainers..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-slate-400 hover:text-[#a5e7ff] transition-all">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-secondary-container rounded-full border-2 border-surface"></span>
+</button>
+<button class="text-slate-400 hover:text-[#a5e7ff] transition-all">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-px bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-[#a5e7ff]">FCMS Portal</span>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="pt-24 pb-12 px-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
+<div>
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-white mb-1">Manage Members</h2>
+<p class="text-on-surface-variant text-sm font-body">Directory of 2,481 active high-performance athletes</p>
+</div>
+<button class="flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-3 rounded-md font-headline font-extrabold uppercase tracking-widest text-xs hover:shadow-[0_0_20px_rgba(0,210,255,0.4)] transition-all">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                    Add New Member
+                </button>
+</div>
+<!-- Bento Stats Overview -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+<div class="bg-surface-container-low p-5 rounded-lg">
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-widest mb-1">Live Check-ins</p>
+<div class="flex items-center justify-between">
+<span class="text-3xl font-headline font-black text-secondary">42</span>
+<div class="bg-secondary-container/20 px-2 py-1 rounded text-[10px] text-secondary font-bold font-label uppercase">In Facility</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg">
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-widest mb-1">Expired Subs</p>
+<div class="flex items-center justify-between">
+<span class="text-3xl font-headline font-black text-error">12</span>
+<span class="text-[10px] text-error font-bold font-label uppercase">Requires Action</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg">
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-widest mb-1">Avg. Progress</p>
+<div class="flex items-center justify-between">
+<span class="text-3xl font-headline font-black text-primary">+8.4%</span>
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg">
+<p class="text-xs text-on-surface-variant font-label uppercase tracking-widest mb-1">Revenue Gap</p>
+<div class="flex items-center justify-between">
+<span class="text-3xl font-headline font-black text-tertiary">$4.2k</span>
+<span class="text-[10px] text-tertiary-fixed-dim font-bold font-label uppercase">Pending</span>
+</div>
+</div>
+</div>
+<!-- Complex Data Table -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-highest border-b border-outline-variant/20">
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-label">Member ID</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-label">Athlete Name</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-label">Status</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-label">Progress (Biometrics)</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-label">Assigned Trainer</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-label text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 font-body text-sm">
+<!-- Row 1 -->
+<tr class="bg-surface hover:bg-surface-container-low transition-colors duration-200">
+<td class="px-6 py-4 font-mono text-xs text-primary-fixed-dim">#KN-8921</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img alt="Member" class="w-full h-full object-cover" data-alt="Modern high-resolution portrait of a young athletic woman with intense focus, cinematic lighting against dark gym background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOfRw-URuP5kv75-Y_hghCc1QXsQsLjq6QmcbYKB3nRkV2e7PvzncaMe5j2wgCMFHWy3bMvUn51hwd6uwEUpYASQZVIeQwq3Rzhf-x5frrx0ug-wc4xKS9IcWK41oTse1v3sfaLhN3ACLAVIi3iRvYBYKynf55CuvutZueBGfEo1ei5r8fySuphkNkaMn2xVRexCw2n74lBWIOZ66Ca0mySO69gDi2xZQrV-w082KvkprSljyoZXQzE51JAvcL1mHtoPiqhnP3EICI"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Elena Rodriguez</p>
+<p class="text-[10px] text-on-surface-variant">Joined 12 Oct 2023</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter bg-secondary-container/10 text-secondary border border-secondary/20">
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4 rounded-full shadow-[0_0_8px_rgba(47,248,1,0.5)]"></div>
+</div>
+<span class="text-xs font-bold text-secondary">Elite</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary-container/20 flex items-center justify-center text-[8px] text-primary">DS</div>
+<span class="text-xs text-on-surface">David Statham</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-primary transition-all">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-200">
+<td class="px-6 py-4 font-mono text-xs text-primary-fixed-dim">#KN-4432</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img alt="Member" class="w-full h-full object-cover" data-alt="Athletic man with professional lighting, dark mood background, focus on fitness determination" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVOX0FcyNhJSYbF0xu-szCdI5-jhy5CzDb5_tT0Wa8juykfkmkcpVXezv-huQeOFgXZuUVUxxRn4u8oGhWVwww-ed50YXrlZrswqFDEh0SOezIGJ1H4wLNT2yjG7htN9AoesfpdddCwwrnbi3ltpPhPGY0Hsw65j0piaLhN9SlyXyyaO1MJo8s0_NxDBrflbh-oP9Sk9iBWe8rLmc_gMENMpITiNeNpRK5EWbk3vwe5-adu2gYcMaXGY8csENJ_EtmSp9TrEibawp"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Marcus Thorne</p>
+<p class="text-[10px] text-on-surface-variant">Joined 05 Jan 2024</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter bg-tertiary-container/10 text-tertiary border border-tertiary/20">
+                                        Grace Period
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-1/2 rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-tertiary">Mid</span>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant italic text-xs">Unassigned</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-primary transition-all">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface hover:bg-surface-container-low transition-colors duration-200">
+<td class="px-6 py-4 font-mono text-xs text-primary-fixed-dim">#KN-1290</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img alt="Member" class="w-full h-full object-cover" data-alt="Close up portrait of a strong woman athlete with high-key lighting highlights on dark studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAGM7d7JshDT3pHmeOsc5Py5gu5-_0AQPeG6ip4s9k4-vVrAIpWkeyCesBneAzELGHdwr3xJrm9X-kvTsftFszd4Z_nLBnLHhQZ3pskfSYq3cCfYJbRXLwyql4F9owX4UDJEtAEvMseJTQcC7o5LRHw2LAk6T_PF7v5Nd5O5JW8cCUWcgfKEuVqF0sqnJAKeO6L-taIkbau5wNQQPNmzCuH2NozE1TdiBXDQNpa4-PdzzGRJ6DGCfBgzeQrx6zJf6D6s57iIam7EnP"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant">Joined 21 Sep 2023</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter bg-error-container/10 text-error border border-error/20">
+                                        Expired
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error w-[15%] rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-error">Critical</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary-container/20 flex items-center justify-center text-[8px] text-primary">JR</div>
+<span class="text-xs text-on-surface">Julian Russ</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-primary transition-all">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors duration-200">
+<td class="px-6 py-4 font-mono text-xs text-primary-fixed-dim">#KN-6612</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img alt="Member" class="w-full h-full object-cover" data-alt="Professional athlete profile photo with moody atmospheric blue lighting and sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6lCg9laEgVckt98VctUcgTIYI_qsbY1ZkJzmvE4ri2oZSNWnSOBHNVtX4hCLXL0KH3ySdjDkgT5fHMC7JLySfP2JSoAuUJoCM-OPiTyJJRR05iZwQaFB2wBAN3SypLO0MACRjheR3BgrP2jmX7Xdg5om4i5OtrOX6AvH92GhigxgPrs6T4XuUzokSs5mJ9L76NZSEvoqTOhF4Dnvuob3TEYekM44Rwcsfx_-MTRAuDphWW8G4Y40ijUOq_TaUxxoBmQZusITuXrSa"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Liam O'Brien</p>
+<p class="text-[10px] text-on-surface-variant">Joined 15 Feb 2024</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter bg-secondary-container/10 text-secondary border border-secondary/20">
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-full rounded-full shadow-[0_0_8px_rgba(47,248,1,0.5)]"></div>
+</div>
+<span class="text-xs font-bold text-secondary">Peak</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-primary-container/20 flex items-center justify-center text-[8px] text-primary">DS</div>
+<span class="text-xs text-on-surface">David Statham</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 hover:bg-surface-container-high rounded text-primary transition-all">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container-high rounded text-on-surface-variant transition-all">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination/Footer -->
+<div class="bg-surface-container px-6 py-3 flex items-center justify-between">
+<p class="text-xs text-on-surface-variant">Showing 1 to 4 of 2,481 members</p>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded hover:bg-surface-container-high text-on-surface-variant disabled:opacity-20" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="px-3 py-1 text-xs font-bold bg-primary text-on-primary rounded">1</button>
+<button class="px-3 py-1 text-xs font-bold hover:bg-surface-container-high text-on-surface-variant rounded">2</button>
+<button class="px-3 py-1 text-xs font-bold hover:bg-surface-container-high text-on-surface-variant rounded">3</button>
+<span class="text-on-surface-variant px-1">...</span>
+<button class="px-3 py-1 text-xs font-bold hover:bg-surface-container-high text-on-surface-variant rounded">62</button>
+<button class="p-2 rounded hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Focus Member Insight (Glassmorphism Detail) -->
+<div class="mt-12 glass-panel border border-primary/20 rounded-2xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px] text-primary">bolt</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-shrink-0 w-32 h-32 rounded-full border-4 border-primary shadow-[0_0_30px_rgba(165,231,255,0.3)] overflow-hidden">
+<img alt="Elite Member" class="w-full h-full object-cover" data-alt="Close up portrait of a serious elite male athlete with sweat on forehead in a dark, high-contrast fitness environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB06n3ECp7o9GLHlWMlHnL--Yum07n1IF8JwpNlp6ZUcJBV4bZrGz9HJApRLrS_Nifu0NYJm85RJVGsMszUdMC_FqSgvpgiMZFS03iStmrWyFsj1M1qharN1zeKv9c7HnnV2WE9tyVTfOsATxu7KTEL7nRHCnyXhFg5DB5IGlVkJKxipirlE_5FtCuUUu3Z_lPsNOzU4kPemkqskNw1oib4HL20vWahMAyJ506tKxSzy23vz7CQjK-yriXI1APVBBnxH1ISp8Y2dkKf"/>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h3 class="text-2xl font-headline font-black text-white mb-2">Weekly Performance Spotlight</h3>
+<p class="text-on-surface-variant text-sm mb-4 max-w-md">Member **Jordan K.** has achieved a 12% increase in cardiovascular endurance this week. Assigned trainer David S. recommends a transition to Advanced Tier coaching.</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4">
+<div class="bg-surface/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-outline-variant/20">
+<p class="text-[10px] text-primary uppercase font-bold tracking-widest">Strength</p>
+<p class="text-lg font-headline font-black text-white">+5.2%</p>
+</div>
+<div class="bg-surface/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-outline-variant/20">
+<p class="text-[10px] text-secondary uppercase font-bold tracking-widest">Attendance</p>
+<p class="text-lg font-headline font-black text-white">100%</p>
+</div>
+<div class="bg-surface/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-outline-variant/20">
+<p class="text-[10px] text-tertiary uppercase font-bold tracking-widest">Recovery</p>
+<p class="text-lg font-headline font-black text-white">Optimal</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-md font-headline font-extrabold uppercase tracking-widest text-[10px]">Review Stats</button>
+<button class="bg-white/5 border border-white/10 hover:bg-white/10 text-white px-6 py-2.5 rounded-md font-headline font-extrabold uppercase tracking-widest text-[10px]">Dismiss</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

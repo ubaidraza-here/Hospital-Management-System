@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* Dynamic Variables to be attached to classes */
+  --color-background: var(--bg-background);
+  --color-surface: var(--bg-surface);
+  --color-surface-dim: var(--bg-surface-dim);
+  --color-surface-variant: var(--bg-surface-variant);
+  
+  --color-on-background: var(--text-on-background);
+  --color-on-surface: var(--text-on-surface);
+  --color-muted: var(--text-muted);
+  --color-subtle: var(--text-subtle);
+  
+  --color-outline: var(--border-outline);
+  --color-outline-low: var(--border-outline-low);
+
+  /* Shared Accents (Emeralds and warnings) */
+  --color-primary: #10b981;
+  --color-primary-dim: #059669;
+  --color-secondary: #34d399;
+  --color-tertiary: #fcd34d;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  --font-headline: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+:root {
+  /* LIGHT MODE PALETTE */
+  --bg-background: #f4f7f6;
+  --bg-surface: #ffffff;
+  --bg-surface-dim: #f8fafc;
+  --bg-surface-variant: #f1f5f9;
+  
+  --text-on-background: #1e293b;
+  --text-on-surface: #1e293b;
+  --text-muted: #64748b;
+  --text-subtle: #475569;
+  
+  --border-outline: #e2e8f0;
+  --border-outline-low: #f1f5f9;
+
+  --shadow-card-color: 0,0,0,0.06;
+  --shadow-hover-color: 0,0,0,0.08;
+}
+
+:root.dark {
+  /* OBSIDIAN DARK MODE PALETTE */
+  --bg-background: #09090b;
+  --bg-surface: #18181b;
+  --bg-surface-dim: #18181b;
+  --bg-surface-variant: #27272a;
+  
+  --text-on-background: #f4f4f5;
+  --text-on-surface: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --text-subtle: #d4d4d8;
+  
+  --border-outline: #27272a;
+  --border-outline-low: #18181b;
+
+  --shadow-card-color: 0,0,0,0.4;
+  --shadow-hover-color: 0,0,0,0.5;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Base custom classes to replace arbitrary tailwind */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.shadow-card {
+  box-shadow: 0 20px 60px rgba(var(--shadow-card-color));
+}
+.hover\:shadow-card-hover:hover {
+  box-shadow: 0 20px 60px rgba(var(--shadow-hover-color));
+}
+
+.glass-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-outline);
+}
+
+.cta-gradient {
+  background: linear-gradient(to right, var(--color-primary-dim), var(--color-primary));
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Status badges */
+.badge-on-shift  { background: rgba(52, 211, 153, 0.15); color: var(--color-secondary); border: 1px solid rgba(52, 211, 153, 0.2); }
+.badge-busy      { background: rgba(245, 158, 11, 0.15); color: var(--color-warning); border: 1px solid rgba(245, 158, 11, 0.2); }
+.badge-off-duty  { background: rgba(161, 161, 170, 0.15); color: var(--text-muted); border: 1px solid rgba(161, 161, 170, 0.2); }
+.badge-pending   { background: rgba(245, 158, 11, 0.1); color: var(--color-warning); }
+.badge-approved  { background: rgba(16, 185, 129, 0.1); color: var(--color-primary); }
+.badge-completed { background: rgba(52, 211, 153, 0.1); color: var(--color-secondary); }
+.badge-cancelled { background: rgba(239, 68, 68, 0.1); color: var(--color-error); }

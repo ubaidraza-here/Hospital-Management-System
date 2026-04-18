@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FCMS Admin Settings | Kinetic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#003543",
+                    "tertiary-container": "#ffb229",
+                    "secondary": "#d7ffc5",
+                    "inverse-surface": "#dce2f7",
+                    "secondary-fixed-dim": "#2ae500",
+                    "inverse-on-surface": "#293040",
+                    "error-container": "#93000a",
+                    "surface-bright": "#323949",
+                    "surface-variant": "#2e3545",
+                    "on-primary-fixed": "#001f28",
+                    "surface-container-high": "#232a3a",
+                    "on-tertiary-fixed": "#291800",
+                    "primary-fixed-dim": "#47d6ff",
+                    "primary-container": "#00d2ff",
+                    "on-surface": "#dce2f7",
+                    "surface-container-highest": "#2e3545",
+                    "on-secondary-container": "#0f6d00",
+                    "on-background": "#dce2f7",
+                    "tertiary-fixed": "#ffddb1",
+                    "on-secondary": "#053900",
+                    "surface-container-lowest": "#070e1d",
+                    "secondary-container": "#2ff801",
+                    "on-tertiary": "#442b00",
+                    "tertiary": "#ffd79f",
+                    "surface": "#0c1322",
+                    "primary": "#a5e7ff",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#00677f",
+                    "on-surface-variant": "#bbc9cf",
+                    "surface-container": "#191f2f",
+                    "on-primary-container": "#00566a",
+                    "secondary-fixed": "#79ff5b",
+                    "background": "#0c1322",
+                    "on-error": "#690005",
+                    "surface-container-low": "#141b2b",
+                    "surface-dim": "#0c1322",
+                    "outline-variant": "#3c494e",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#b6ebff",
+                    "outline": "#859399",
+                    "on-tertiary-fixed-variant": "#624000",
+                    "on-secondary-fixed-variant": "#095300",
+                    "surface-tint": "#47d6ff",
+                    "tertiary-fixed-dim": "#ffba4a",
+                    "on-secondary-fixed": "#022100",
+                    "on-primary-fixed-variant": "#004e60",
+                    "on-tertiary-container": "#6c4700"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(46, 53, 69, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #070e1d; }
+        ::-webkit-scrollbar-thumb { background: #232a3a; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#070e1d] flex flex-col py-8 px-4 gap-2 z-40">
+<div class="mb-10 px-4">
+<h1 class="font-headline font-black text-2xl text-[#a5e7ff] tracking-tight">KINETIC</h1>
+<p class="text-on-surface-variant text-xs font-medium tracking-widest uppercase">Elite Performance</p>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined">fitness_center</span> Trainers
+            </a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined">event_note</span> Sessions
+            </a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined">card_membership</span> Subscriptions
+            </a>
+<a class="flex items-center gap-3 text-[#d7ffc5] bg-[#141b2b] rounded-lg px-4 py-3 border-l-4 border-[#2ff801] font-medium text-sm active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-2 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined">help</span> Help
+            </a>
+<a class="flex items-center gap-3 text-slate-400 px-4 py-3 hover:bg-[#141b2b] hover:text-white transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined">logout</span> Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center w-full px-8 py-4 sticky top-0 z-50 bg-[#0c1322]">
+<div class="flex items-center gap-6">
+<span class="text-xl font-black text-[#a5e7ff] uppercase tracking-widest font-headline">FCMS</span>
+<div class="hidden md:flex gap-6">
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200 text-sm" href="#">Dashboard</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors duration-200 text-sm" href="#">Reports</a>
+<a class="text-[#a5e7ff] font-bold border-b-2 border-[#00d2ff] pb-1 text-sm" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="portrait of a focused athletic coach in a dark environment with moody high-contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLoF8gfnop7Sx-ptlFOH7NXkSQ-LNroXUkjP0JWOl1KvMU6eFE9gIvz9gKcoo4VtX1lq179kdtej7pu-TAM6xJiFX9tDPkGiyWu5HNP-ZHl7L2tGPPPVEUzQkR7HbNxr5GZ0KDUDR6zNs-22o4W3YmKLsj-xwj97swAbtjGNGeNiDFh3Ywn_yiIimBvQvULqkZ_5Jm4Mg7zOJ0i4WyFGbCpzcWiSakg15wSwRH0w2rtE_tda1yY3q7U6JoOsZOGzc7EnThRGXE2C64"/>
+</div>
+</div>
+</header>
+<section class="p-8 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10">
+<h2 class="font-headline font-extrabold text-3xl text-on-surface tracking-tight mb-2">System Configuration</h2>
+<p class="text-on-surface-variant max-w-2xl">Manage the engine behind Kinetic. Control security protocols, communication templates, and global brand identity from a central command center.</p>
+</div>
+<!-- Bento Grid Layout for Settings -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Security Column (Left) -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- API & Security Key Management -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-transparent hover:border-primary/10 transition-all">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline font-bold text-xl text-primary mb-1">Security &amp; API Access</h3>
+<p class="text-on-surface-variant text-sm">Configure environment variables and authentication layers.</p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-4 py-2 rounded-lg font-headline font-bold text-xs uppercase tracking-wider active:scale-95 transition-all shadow-[0_0_20px_rgba(0,210,255,0.15)]">
+                                Rotate Keys
+                            </button>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-lg p-4 flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">key</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Production API Key</p>
+<p class="font-mono text-sm text-on-surface mt-1">kin_live_••••••••••••••••4f2a</p>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-primary-fixed-dim">
+<span class="material-symbols-outlined text-xl">content_copy</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-4 flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">shield_lock</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">OAuth 2.0 Client Secret</p>
+<p class="font-mono text-sm text-on-surface mt-1">••••••••••••••••••••••••••••••</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Audit Logs / Activity -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-transparent">
+<div class="p-6 bg-surface-container-high flex justify-between items-center">
+<h3 class="font-headline font-bold text-lg text-on-surface">Authentication Logs</h3>
+<span class="text-xs font-bold text-secondary-fixed-dim px-2 py-1 bg-secondary/10 rounded uppercase">System Live</span>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-highest">
+<th class="px-6 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Admin Entity</th>
+<th class="px-6 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Action</th>
+<th class="px-6 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Timestamp</th>
+<th class="px-6 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="bg-surface hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-6 w-6 rounded-full bg-tertiary-container text-on-tertiary text-[10px] flex items-center justify-center font-bold">JD</div>
+<span class="text-sm font-medium">Jordan D. (Root)</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">Update API Policy</td>
+<td class="px-6 py-4 text-xs font-mono text-on-surface-variant">2023-11-24 14:22:01</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-secondary text-xs font-bold">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> Success
+                                        </span>
+</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-6 w-6 rounded-full bg-primary-container text-on-primary text-[10px] flex items-center justify-center font-bold">MK</div>
+<span class="text-sm font-medium">Marcus K.</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">Failed Login Attempt</td>
+<td class="px-6 py-4 text-xs font-mono text-on-surface-variant">2023-11-24 12:10:45</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-error text-xs font-bold">
+<span class="h-1.5 w-1.5 rounded-full bg-error"></span> Denied
+                                        </span>
+</td>
+</tr>
+<tr class="bg-surface hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-6 w-6 rounded-full bg-secondary-container text-on-secondary text-[10px] flex items-center justify-center font-bold">SA</div>
+<span class="text-sm font-medium">System Auto</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">Token Refresh</td>
+<td class="px-6 py-4 text-xs font-mono text-on-surface-variant">2023-11-24 09:00:00</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-1.5 text-secondary text-xs font-bold">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span> Success
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Branding & Theme Column (Right) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Branding Card -->
+<div class="bg-surface-container-low rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<h3 class="font-headline font-bold text-lg text-on-surface mb-6">Global Branding</h3>
+<div class="space-y-6">
+<!-- Logo Upload Area -->
+<div class="space-y-2">
+<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">System Logo</label>
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:border-primary/50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-outline mb-2 group-hover:text-primary transition-colors">cloud_upload</span>
+<p class="text-xs text-on-surface-variant">Drag SVG or PNG here</p>
+<p class="text-[10px] text-outline mt-1">Recommended: 512x512px</p>
+</div>
+</div>
+<!-- Color Palette -->
+<div class="space-y-3">
+<label class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Theme Accents</label>
+<div class="grid grid-cols-5 gap-2">
+<div class="h-10 rounded-lg bg-primary ring-2 ring-primary/20 ring-offset-2 ring-offset-background"></div>
+<div class="h-10 rounded-lg bg-secondary"></div>
+<div class="h-10 rounded-lg bg-tertiary"></div>
+<div class="h-10 rounded-lg bg-surface-container-highest"></div>
+<div class="h-10 rounded-lg border-2 border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">add</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-surface-container-highest text-on-surface py-3 rounded-lg text-sm font-bold border border-outline-variant/10 hover:bg-surface-container transition-colors">
+                                Preview Branding
+                            </button>
+</div>
+</div>
+<!-- Notification Templates -->
+<div class="bg-surface-container-low rounded-xl p-6">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-4">Email Notifications</h3>
+<div class="space-y-3">
+<div class="p-3 bg-surface-container-lowest rounded-lg border-l-4 border-primary flex justify-between items-center group cursor-pointer hover:bg-surface-container-high transition-all">
+<div>
+<p class="text-sm font-bold">Welcome Series</p>
+<p class="text-[10px] text-on-surface-variant uppercase">3 active templates</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg border-l-4 border-secondary flex justify-between items-center group cursor-pointer hover:bg-surface-container-high transition-all">
+<div>
+<p class="text-sm font-bold">Subscription Alert</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Renewal triggers</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg border-l-4 border-tertiary flex justify-between items-center group cursor-pointer hover:bg-surface-container-high transition-all">
+<div>
+<p class="text-sm font-bold">Security Alerts</p>
+<p class="text-[10px] text-on-surface-variant uppercase">Global system notifications</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Action Bar (Sticky Footer within main section) -->
+<div class="mt-12 glass-panel border border-outline-variant/20 rounded-2xl p-4 flex justify-between items-center sticky bottom-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">info</span>
+<p class="text-xs text-on-surface-variant">Last saved: Today at 15:45 (GMT-5)</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 rounded-lg text-sm font-bold text-on-surface hover:bg-surface-container-highest transition-colors">
+                        Discard Changes
+                    </button>
+<button class="bg-gradient-to-br from-secondary to-secondary-container text-on-secondary px-8 py-2.5 rounded-lg text-sm font-headline font-extrabold uppercase tracking-widest hover:shadow-[0_0_30px_rgba(47,248,1,0.2)] transition-all active:scale-95">
+                        Save Configuration
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Navigation Toggle (Bottom Bar for Mobile as per Responsive Pivot rule) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#0c1322] flex justify-around py-4 border-t border-outline-variant/10 z-[60]">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="text-[10px] font-medium">Trainers</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">event_note</span>
+<span class="text-[10px] font-medium">Sessions</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+</body></html>
